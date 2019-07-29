@@ -1,5 +1,25 @@
+#intro {
+  padding-top: 5%;
+}
+
+#intro h2 {
+  text-align: center;
+}
+
+#intro hr {
+  width: 10%;
+  border-radius: 50%;
+  margin: auto;
+}
+
+#intro p {
+  padding: 2%;
+  padding-bottom: 5%;
+}
+
 #services {
   padding-top: 5%;
+  padding-bottom: 5%;
   text-align: center;
 }
 
@@ -32,6 +52,7 @@
 
 #equipe {
   padding-top: 5%;
+  padding-bottom: 5%;
   text-align: center;
 }
 
@@ -71,9 +92,61 @@
   max-height: 100%;
 }
 
+#contact {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+}
+
+#contact #formulaire {
+  margin: auto;
+  width: 50%;
+  max-width: 600px;
+}
+
+#contact #formulaire div {
+  padding: 1%;
+  width: 100%;
+  text-align: right;
+}
+
+#contact #formulaire div input {
+  width: 65%;
+}
+
+#contact #formulaire div textarea {
+  width: 65%;
+  border-radius: 5px;
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+.darkBody {
+  background-color: #141414;
+  color: #ffc8c8;
+}
+
+.darkColored {
+  background-color: #3c3c3c;
+}
+
+.bottonColored {
+  background-color: #3c3c3c;
+  border-color: #fa2828;
+  border-style: outset;
+  color: #fa2828;
+  -webkit-box-shadow: 0 0 10px #fa2828;
+          box-shadow: 0 0 10px #fa2828;
+}
+
+.navDark {
+  background-color: #3c3c3c;
+  border-color: #fa2828;
+  -webkit-box-shadow: 3px 3px 4px #fa2828;
+          box-shadow: 3px 3px 4px #fa2828;
 }
 
 body {
@@ -82,11 +155,14 @@ body {
   font-family: 'Cinzel Decorative', cursive;
 }
 
+body .colored {
+  background-color: #e6e6e6;
+}
+
 body nav {
   position: fixed;
   height: 50px;
   width: 100%;
-  background-color: #e6e6e6;
   border-bottom: 1px solid #bbbbbb;
   -webkit-box-shadow: 3px 3px 4px #88caff;
           box-shadow: 3px 3px 4px #88caff;
@@ -107,21 +183,23 @@ body nav ul li {
   padding: 10px;
 }
 
+body nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
 body nav button {
   position: absolute;
   top: 2px;
   left: 20px;
   width: 45px;
   height: 45px;
+  color: #88caff;
   border-color: rgba(136, 201, 255, 0.452);
-  -webkit-box-shadow: 0px 0px 5px #88caff;
-          box-shadow: 0px 0px 5px #88caff;
+  -webkit-box-shadow: 0px 0px 10px #88caff;
+          box-shadow: 0px 0px 10px #88caff;
   border-radius: 50%;
   background: rgba(214, 214, 214, 0.466);
-}
-
-body nav buttonact {
-  border-color: #ff4141;
 }
 
 body header {
@@ -133,8 +211,7 @@ body header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #e1e1e1;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #bbbbbb;
 }
 
 body header #bigTitle {
@@ -149,5 +226,10 @@ body header #bigTitle h1 {
 
 body header #bigTitle p {
   margin-left: 200px;
+}
+
+body footer {
+  width: 100vw;
+  height: 10vh;
 }
 /*# sourceMappingURL=style.css.map */

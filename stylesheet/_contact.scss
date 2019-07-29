@@ -1,0 +1,25 @@
+#contact {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+
+    #formulaire {
+        margin: auto;
+        width: 50%;
+        max-width: 600px;
+        
+        div{
+            padding: 1%;
+            width: 100%;
+            text-align: right;
+            
+            input{
+                width: 65%;
+            }
+            textarea {
+                width: 65%;
+                border-radius: 5px;
+            }
+        }
+    }
+}

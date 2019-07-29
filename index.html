@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dd101c5940.js"></script> 
     <link rel="stylesheet" href="./stylesheet/style.css">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>PowerJs</title>
 </head>
 <body>
-    <nav>
-        <button id="toggle"><img src="./ico/power.png" alt="bouton power"></button>
+    <nav class="colored">
+        <button id="togglebtn"><i class="fas fa-power-off fa-2x"></i></button>
         <ul>
-            <li>Qui sommes-nous ?</li>
-            <li>Services</li>
-            <li>Équipe</li>
+            <li><a href="#"><i class="fas fa-home"></i></a></li>
+            <li><a href="#intro">Qui sommes-nous ?</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#equipe">Équipe</a></li>
         </ul>
     </nav>
-    <header>
+    <header class="colored">
         <div id="bigTitle">
         <h1 id="marque">PowerJs</h1>
         <p id="slogan">May the force be with you</p>
@@ -26,12 +28,13 @@
     </header>
     <section id="intro">
         <h2>Qui sommes-nous ?</h2>
+        <hr>
         <p>PowerJs est une agence spécialiser dans la conception réalisation de sites web et mobile dynamiques performants, 
             basés sur JavaScript et ses Framework ainsi que sur des bases de données noSQL telle que MongoDB, 
             qui permettent de manipuler un grand nombre de données avec une vitesse de traitement exceptionnel.
             Que vous souhaitiez un nouveau site web, créer votre API, ou simplement améliorer les performances de ceux que vous possédez déjà, PowerJs es là pour vous. </p>
     </section>
-    <section id="services">
+    <section id="services" class="colored">
         <h2>Services</h2>
         <hr>
         <div id="cardServ"> <!--block contenent tous les cartes services-->
@@ -113,8 +116,34 @@
             </div>
         </div>
     </section>
+    <section id="contact" class="colored">
+            <form id="formulaire" method="get">
+                <div>
+                <label for="firstName">Prénoms</label>
+                <input type="text" name="firstName" id="firstName" placeholder="Prénoms">
+                </div>
+                <div>
+                <label for="lastName">Nom</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Nom">
+                </div>
+                <div>
+                <label for="mail">E-mail</label>
+                <input type="email" name="mail" id="mail" placeholder="e-mail">
+                </div>
+                <div>
+                <label for="phone">Téléphone</label>
+                <input type="tel" name="phone" id="phone" placeholder="Téléphone">
+                </div>
+                <div>
+                <label for="commit">Commentaires</label>
+                <textarea name="commit" id="commit" placeholder="Votre demande..."></textarea>
+                </div>
+                <input type="submit" value="Valider">
+            </form>
+    </section>
     <footer>
-
+        
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
