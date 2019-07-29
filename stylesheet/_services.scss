@@ -23,5 +23,15 @@
             background-color: #ffffff;
             border: solid 1px rgb(184, 182, 182);
         }
+        .darkCard{
+            margin: 2%;
+            padding: 2%;
+            width: 22%;
+            min-width: 250px;
+            max-width: 400px;
+            text-align: center;
+            background-color: $bodyColor;
+            border: solid 1px $redShadow;
+        }
     }
 }

@@ -50,6 +50,17 @@
   border: solid 1px #b8b6b6;
 }
 
+#services #cardServ .darkCard {
+  margin: 2%;
+  padding: 2%;
+  width: 22%;
+  min-width: 250px;
+  max-width: 400px;
+  text-align: center;
+  background-color: #141414;
+  border: solid 1px #fa2828;
+}
+
 #equipe {
   padding-top: 5%;
   padding-bottom: 5%;
@@ -92,6 +103,26 @@
   max-height: 100%;
 }
 
+#equipe #cardEquipe .darkProfil {
+  margin: 2%;
+  padding: 2%;
+  width: 22%;
+  min-width: 250px;
+  max-width: 400px;
+  text-align: center;
+  background-color: #3c3c3c;
+  border: solid 1px #fa2828;
+}
+
+#equipe #cardEquipe .darkProfil .imgProfil {
+  max-width: 100%;
+}
+
+#equipe #cardEquipe .darkProfil .imgProfil img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 #contact {
   padding-top: 5%;
   padding-bottom: 5%;
@@ -119,6 +150,97 @@
   border-radius: 5px;
 }
 
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  max-width: 100%;
+}
+
+footer div {
+  width: 40%;
+  max-width: 250px;
+  padding: 1%;
+}
+
+footer div a {
+  color: black;
+  padding-left: 10px;
+}
+
+@-webkit-keyframes enter {
+  0% {
+    position: absolute;
+    left: -20vw;
+  }
+  20% {
+    position: absolute;
+    left: -8vw;
+  }
+  40% {
+    position: absolute;
+    left: 4vw;
+  }
+  60% {
+    position: absolute;
+    left: 16vw;
+  }
+  80% {
+    position: absolute;
+    left: 28vw;
+  }
+  100% {
+    position: inherit;
+  }
+}
+
+@keyframes enter {
+  0% {
+    position: absolute;
+    left: -20vw;
+  }
+  20% {
+    position: absolute;
+    left: -8vw;
+  }
+  40% {
+    position: absolute;
+    left: 4vw;
+  }
+  60% {
+    position: absolute;
+    left: 16vw;
+  }
+  80% {
+    position: absolute;
+    left: 28vw;
+  }
+  100% {
+    position: inherit;
+  }
+}
+
+@-webkit-keyframes ghost {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ghost {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -126,7 +248,7 @@
 
 .darkBody {
   background-color: #141414;
-  color: #ffc8c8;
+  color: #fa2828;
 }
 
 .darkColored {
@@ -136,7 +258,7 @@
 .bottonColored {
   background-color: #3c3c3c;
   border-color: #fa2828;
-  border-style: outset;
+  border-style: inset;
   color: #fa2828;
   -webkit-box-shadow: 0 0 10px #fa2828;
           box-shadow: 0 0 10px #fa2828;
@@ -147,6 +269,10 @@
   border-color: #fa2828;
   -webkit-box-shadow: 3px 3px 4px #fa2828;
           box-shadow: 3px 3px 4px #fa2828;
+}
+
+.navDark a {
+  color: #fa2828;
 }
 
 body {
@@ -202,6 +328,26 @@ body nav button {
   background: rgba(214, 214, 214, 0.466);
 }
 
+body nav p {
+  position: absolute;
+  top: 10px;
+  left: 70px;
+  opacity: 0;
+}
+
+body nav button:hover + p {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
+}
+
+body nav #burger {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+}
+
 body header {
   width: 100%;
   height: 70vh;
@@ -215,6 +361,8 @@ body header {
 }
 
 body header #bigTitle {
+  -webkit-animation: enter 0.8s linear;
+          animation: enter 0.8s linear;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -225,7 +373,20 @@ body header #bigTitle h1 {
 }
 
 body header #bigTitle p {
+  -webkit-animation: ghost 3s ease-in;
+          animation: ghost 3s ease-in;
   margin-left: 200px;
+}
+
+body .card {
+  margin: 2%;
+  padding: 2%;
+  width: 22%;
+  min-width: 250px;
+  max-width: 400px;
+  text-align: center;
+  background-color: #ffffff;
+  border: solid 1px #b8b6b6;
 }
 
 body footer {
