@@ -14,6 +14,7 @@
         justify-content: space-around;
 
         .card{
+            transition: 0.5s;
             margin: 2%;
             padding: 2%;
             width: 22%;
@@ -24,6 +25,7 @@
             border: solid 1px rgb(184, 182, 182);
         }
         .darkCard{
+            transition: 0.5s;
             margin: 2%;
             padding: 2%;
             width: 22%;

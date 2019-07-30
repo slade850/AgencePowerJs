@@ -40,6 +40,8 @@
 }
 
 #services #cardServ .card {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   margin: 2%;
   padding: 2%;
   width: 22%;
@@ -51,6 +53,8 @@
 }
 
 #services #cardServ .darkCard {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   margin: 2%;
   padding: 2%;
   width: 22%;
@@ -84,6 +88,8 @@
 }
 
 #equipe #cardEquipe .profil {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   margin: 2%;
   padding: 2%;
   width: 22%;
@@ -104,6 +110,8 @@
 }
 
 #equipe #cardEquipe .darkProfil {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   margin: 2%;
   padding: 2%;
   width: 22%;

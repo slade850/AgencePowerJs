@@ -114,11 +114,3 @@ burger.addEventListener('click', () => {
         ul.style.height = '';
     }
 });
-
-window.addEventListener('scroll', () => {
-    card.forEach( val => {
-        val.style.opacity = '0';
-        val.style.transition = '1s';
-        val.style.opacity = '1';
-    })
-})
