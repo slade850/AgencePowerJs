@@ -5,7 +5,8 @@
 
     #formulaire {
         margin: auto;
-        width: 50%;
+        width: 50vw;
+        min-width: 270px;
         max-width: 600px;
         
         div{
@@ -15,6 +16,7 @@
             
             input{
                 width: 65%;
+                border-radius: 5px;
             }
             textarea {
                 width: 65%;

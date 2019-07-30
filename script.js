@@ -7,8 +7,11 @@ const services = document.getElementById('services').classList;
 const contact = document.getElementById('contact').classList;
 const card = document.querySelectorAll('.card');
 const profil = document.querySelectorAll('.profil');
-
-
+const input = document.querySelectorAll('input');
+const textarea = document.querySelector('textarea').classList;
+const burger = document.getElementById('burger');
+const ul = document.querySelector('ul');
+const lien = document.querySelectorAll('a');
 
 let togglebtn = 0;
 
@@ -23,12 +26,18 @@ const callDark = () => {
     nv.toggle('colored');
     nv.toggle("navDark");
     boutonL.toggle("bottonColored");
+    ul.classList.toggle('darkUl');
     header.toggle("colored");
     services.toggle("colored");
     contact.toggle("colored");
     header.toggle("darkColored");
     services.toggle("darkColored");
     contact.toggle("darkColored");
+    input.forEach(val => {
+        val.classList.toggle('darkBody');
+    });
+
+    textarea.toggle('darkBody');
     card.forEach(val => {
         val.classList.toggle('card');
         val.classList.toggle('darkCard');
@@ -64,3 +73,52 @@ if(localStorage.getItem('dark') != undefined){
     togglebtn = localStorage.getItem('dark');
     if(togglebtn == 1){callDark();};
 }
+let bOn = 0;
+
+ul.addEventListener( 'mouseleave' , () => {
+    bOn = 0;
+    burger.style.transform = "rotate(0deg)";
+    burger.setAttribute('class', "fas fa-bars fa-2x");
+    ul.style.opacity = '';
+    ul.style.width = '';
+    ul.style.height = '';
+});
+
+lien.forEach( a => {
+        a.addEventListener( 'click' , () => {
+        bOn = 0;
+        burger.style.transform = "rotate(0deg)";
+        burger.setAttribute('class', "fas fa-bars fa-2x");
+        ul.style.opacity = '';
+        ul.style.width = '';
+        ul.style.height = '';
+    });
+})
+
+burger.addEventListener('click', () => {
+    if(bOn == 0){
+        bOn = 1;
+        burger.style.transition = "0.2s";
+        burger.style.transform = "rotate(90deg)";
+        burger.setAttribute('class', "fas fa-times fa-2x");
+        ul.style.transition = "0.2s";
+        ul.style.width = '159px';
+        ul.style.height = '220px';
+        ul.style.opacity = 1;
+    } else {
+        bOn = 0;
+        burger.style.transform = "rotate(0deg)";
+        burger.setAttribute('class', "fas fa-bars fa-2x");
+        ul.style.opacity = '';
+        ul.style.width = '';
+        ul.style.height = '';
+    }
+});
+
+window.addEventListener('scroll', () => {
+    card.forEach( val => {
+        val.style.opacity = '0';
+        val.style.transition = '1s';
+        val.style.opacity = '1';
+    })
+})
