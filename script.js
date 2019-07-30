@@ -12,17 +12,18 @@ const textarea = document.querySelector('textarea').classList;
 const burger = document.getElementById('burger');
 const ul = document.querySelector('ul');
 const lien = document.querySelectorAll('a');
+// -------- constantes pour recupération des éléments du DOM -----|  
 
-let togglebtn = 0;
+let togglebtn = 0; //variable pour verifier l'etat du le toggle---|
 
-bouton.addEventListener('click', () => {
-    togglebtn == 0 ? togglebtn = 1: togglebtn = 0;
-    callDark();
+bouton.addEventListener('click', () => { //ecoute sur le click du toggle.
+    togglebtn == 0 ? togglebtn = 1: togglebtn = 0; //condition pour changer la valeur de notre variable togglebtn. 
+    callDark(); // Appel de la fonction callDark pour passé du mode clair au mode sombre et inversement
 });
 
 const callDark = () => {
-    togglebtn == 1 ? localStorage.setItem('dark', togglebtn): localStorage.clear();
-    bd.toggle("darkBody");
+    togglebtn == 1 ? localStorage.setItem('dark', togglebtn): localStorage.clear(); // si ont active le mode sombre ont l'enregistre la variable dans le localStorage.
+    bd.toggle("darkBody"); //avec la méthode toggle ont implémente la classe si elle n'est pas présente dans le cas contraire ont la supprime.
     nv.toggle('colored');
     nv.toggle("navDark");
     boutonL.toggle("bottonColored");
@@ -46,7 +47,7 @@ const callDark = () => {
         val.classList.toggle('profil');
         val.classList.toggle('darkProfil');
     });
-    if(togglebtn == 1){
+    if(togglebtn == 1){ // Condition pour basculer les images de services et changer le texte qui apparait à côté du toggle.
         document.getElementById('come').innerText = "Come to the light side";
         document.getElementById('ping').setAttribute('src', './ico/pingRed.png');
         document.getElementById('note').setAttribute('src', './ico/noteRed.png');
@@ -69,35 +70,37 @@ const callDark = () => {
     }
 }
 
+// verification si une valeur est présente dans le localStorage 
+// Ont la place après la fonction toggle pour s'assurer qu'au démarrage la fonction soit correctement charger 
 if(localStorage.getItem('dark') != undefined){
     togglebtn = localStorage.getItem('dark');
     if(togglebtn == 1){callDark();};
 }
-let bOn = 0;
 
-ul.addEventListener( 'mouseleave' , () => {
-    bOn = 0;
+let burgerOn = 0; //On crée une variable burgerOn qui servira à vérifier l’état du menu burger 
+
+function closeMenu(){ //Fonction pour fermer le menu burger
+    burgerOn = 0;
     burger.style.transform = "rotate(0deg)";
     burger.setAttribute('class', "fas fa-bars fa-2x");
     ul.style.opacity = '';
     ul.style.width = '';
     ul.style.height = '';
+};
+
+ul.addEventListener( 'mouseleave' , () => { // Si nous sortons de la liste du menu on appelle la fermeture.
+    closeMenu()
 });
 
 lien.forEach( a => {
-        a.addEventListener( 'click' , () => {
-        bOn = 0;
-        burger.style.transform = "rotate(0deg)";
-        burger.setAttribute('class', "fas fa-bars fa-2x");
-        ul.style.opacity = '';
-        ul.style.width = '';
-        ul.style.height = '';
+        a.addEventListener( 'click' , () => { //Si nous cliquons sur un lien on appelle la fermeture 
+            closeMenu()
     });
 })
 
-burger.addEventListener('click', () => {
-    if(bOn == 0){
-        bOn = 1;
+burger.addEventListener('click', () => { //Ecoute du click sur le burger pour ouvrir ou fermer le menu.
+    if(burgerOn == 0){
+        burgerOn = 1;
         burger.style.transition = "0.2s";
         burger.style.transform = "rotate(90deg)";
         burger.setAttribute('class', "fas fa-times fa-2x");
@@ -106,11 +109,6 @@ burger.addEventListener('click', () => {
         ul.style.height = '220px';
         ul.style.opacity = 1;
     } else {
-        bOn = 0;
-        burger.style.transform = "rotate(0deg)";
-        burger.setAttribute('class', "fas fa-bars fa-2x");
-        ul.style.opacity = '';
-        ul.style.width = '';
-        ul.style.height = '';
+        closeMenu()
     }
 });
